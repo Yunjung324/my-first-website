@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+    <!--night랑 day 한번에 실행할 수 있도록 하는 코드-->
+    <input id="night_day" type="button" value = "night" onclick = "
+    if(document.querySelector('#night_day').value === 'night'){
+        document.querySelector('body').style.backgroundColor = 'black';
+        document.querySelector('body').style.color = 'white';
+        document.querySelector('#night_day').value = 'day';
+    }
+    else{
+        document.querySelector('body').style.backgroundColor = 'white';
+        document.querySelector('body').style.color = 'black';
+        document.querySelector('#night_day').value = 'night';
+    }
+    ">
+    <!--Refactoring 후의 코드-->
+    <input type = "button" value = "refactoring night" onclick = "
+    var target = document.querySelector('body');
+    if(this.value === 'refactoring night'){
+        target.style.backgroundColor = 'black';
+        target.style.color = 'white';
+        this.value = 'refactoring day';
+    }
+    else{
+        target.style.backgroundColor = 'white';
+        target.style.color = 'black';
+        this.value = 'refactoring night';
+    }
+    ">
+    <h1>About Refactoring</h1>
+    <span>Refactoring이란 코딩을 하다보면 비효율적인 면들이 생기기 마련인데 이 때 동작하는 것은 그대로 두고
+        코드를 효율적으로 만들어 코드의 가독성을 높이고, 유지보수를 편리하게 하고, 중복 코드를 줄이는 것과 같은 개선 작업을
+        의미한다. 
+    </span>
+    </body>
+</html>
