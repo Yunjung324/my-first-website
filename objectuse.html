@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Yunjung's WEBSITE</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        var Links = {
+            setColor: function (color) {
+                var alist = document.querySelectorAll('a');
+                var i = 0;
+                while (i < alist.length) {
+                    alist[i].style.color = color;  //색상이 변경되는 것이기 때문에 매개변수를 여기에 사용
+                    i = i + 1;
+                }
+            }
+        }
+
+        var Body = {
+            setColor: function (color){
+                document.querySelector('body').style.color = color;
+            },
+            setBackgroundColor: function (color){
+                document.querySelector('body').style.backgroundColor = color;
+            }
+        }
+        function nightDayHandler(self) {
+            var target = document.querySelector('body');
+            if (self.value === 'night') {
+                Body.setColor('white');
+                Body.setBackgroundColor('black');
+                 //target은 위에서 선언한대로
+                self.value = 'day';   //this는 document.querySelector('#night_day') 를 의미
+                Links.setColor('powderblue');
+            }
+            else {
+                Body.setColor('black');
+                Body.setBackgroundColor('white');
+                self.value = 'night';
+                Links.setColor('blue');
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>My website</h1>
+
+    <!--night랑 day 한번에 실행할 수 있도록 하는 코드-->
+    <input id="night_day" type="button" value="night" onclick="
+    nightDayHandler(this);
+    ">
+
+    <div id="grid">
+        <ul>
+            <li>Yunjung</li>
+            <li style="color:blue">Luny</li>
+            <a href="https://namu.wiki/w/DAY6" target="_blank" title="Day6 namuwiki">
+                <li>DAY6</li>
+            </a>
+            <li class="saw">Sungjin</li>
+            <li class="saw">Wonpil</li>
+            <li>YoungK</li>
+            <li><a href="index.html">Dowoon</a></li>
+        </ul>
+
+        <div>
+            Hello world. This is <strong><u>yunjung's</u></strong> webpage.
+
+
+            <!--<h1>This is heading 1</h1>
+        <h2>This is heading 2</h2>
+        <h3>This is heading 3</h3>
+        <h4>This is heading 4</h4>
+        <h5>This is heading 5</h5>
+        <h6>This is heading 6</h6>-->
+
+            Hello. Welcome to yunjung's website.<br>
+            <p>This is the first time that I learn about HTML. So exciting!</p>
+            <p>About Myongji University.
+                명지대학교는 1948년 7월 유상근(兪尙根)이 재단법인 무궁학원(無窮學園)을 설립하여 같은 해 9월 서울 중구 북창동에서 서울고등가정학교로 개교하였다.
+                초대 교장에 김재준(金在俊)이 취임하였으며, 1952년 7월 2년제 근화여자초급대학(槿花女子初級大學)으로 개편하고 학장에 전호덕(全浩德)이 취임하였다.
+                1955년 대학명칭을 서울여자초급대학으로 변경한다. 1956년 남녀공학 서울문리사범대학을 설립하고, 1963년 지금의 4년제 명지대학으로 교명을 변경한다.
+                재단법인 무궁학원은 학교법인 명지학원으로 개칭하였다. 1983년 종합대학으로 승격하게 된다. 1979년 용인캠퍼스를 건설하게 되고, 1983년 대학본부를 용인캠퍼스로 이전한다.
+                1989년 계열별 이원화를 인가받아 서울 신촌 인근 남가좌동의 경상, 인문계열 "인문캠퍼스"와,
+                경기 용인시에 이과, 공과대학, 예체능 등의 자연캠퍼스로 계열별로 캠퍼스를 이원화하게 된다.</p>
+            <img src="coding.jpg" width="100%">
+        </div>
+    </div>
+</body>
+
+</html>
