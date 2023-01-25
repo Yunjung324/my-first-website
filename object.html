@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+
+<body>
+    <h1>Object</h1>
+    <h2>Create</h2>
+    <script>
+        var day6 = {
+            "sungjin": "leader",
+            "youngk": "vocal",
+            "wonpil": "piano",
+            "dowoon": "drum"
+        };
+        document.write("sungjin's position: " + day6.sungjin + "<br>");
+        day6.jyeomi = "day6 fan";
+        document.write("jyeomi's position: " + day6.jyeomi + "<br>");
+        day6["yun hosuni"] = "cat";
+        document.write("yun hosuni's position: " + day6["yun hosuni"] + "<br>");
+    </script>
+    <h2>Iterate</h2>
+    <script>
+        for (var key in day6) {
+            document.write(key + ' : ' + day6[key] + "<br>");
+        }
+    </script>
+    <h2>Property & Method</h2>
+    <script>
+        day6.showAll = function () {  //function showAll(){}과 같은 표현이라고 생각
+            for (var key in day6) {
+                if (key !== "showAll") {
+                    document.write(key + ' : ' + day6[key] + "<br>");
+                }
+            }
+        }
+        day6.showAll();
+    </script>
+</body>
+
+</html>
